@@ -1,0 +1,3 @@
+mov eax, [ebx+ecx*4]
+
+This instruction attempts to access memory at the address calculated by ebx + ecx*4.  However, if ecx is a very large number, the calculation could overflow, resulting in an access to an invalid memory location, causing a segmentation fault or other exceptions.  The issue is especially acute on 32-bit architectures where the registers have limited range. This might occur unexpectedly during array indexing if the index 'ecx' is not properly checked for bounds.
